@@ -8,6 +8,7 @@ no_show_mu = 0.02434
 no_show_sigma = 0.02436
 plane_capacity = 217
 ticket_price = 1016.94
+max_compensation = 1550
 
 #Generate no show rates
 def gen_no_show_rates(number):
@@ -35,9 +36,12 @@ def calc_bump(attendance, passengers):
     z = y / (attendance.size * passengers)
     return x, y, z
 
-# calculate total compesation, profit
+# calculate total compensation, opportunity lost, profit
 def calc_profit(attendance, bumps):
+    compensation_lost = bumps * max_compensation
+    opportunity_lost = (abs(attendance[attendance < plane_capacity] - plane_capacity)).sum() * ticket_price
 
+    return
 
 
 
