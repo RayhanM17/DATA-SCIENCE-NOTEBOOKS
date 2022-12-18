@@ -86,4 +86,5 @@ def overbooking_sim(data_points, runs):
 #plane_attendance = sim_shows(no_show_rates, 218, 1000)
 #overflow_flights, total_bumps, bump_rate = calc_bump(plane_attendance, 218)
 # total_comp, empty_seats, opportunity_lost, capacity = calc_profit(plane_attendance, total_bumps)
+
 print(overbooking_sim(20, 10000000))
