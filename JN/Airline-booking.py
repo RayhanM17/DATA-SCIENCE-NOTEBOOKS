@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-#import scipy.stats as stats
 
 #Important Variables
 no_show_mu = 0.02434
@@ -25,9 +24,9 @@ def gen_no_show_rates(number, graph):
 def sim_shows(probs, booked, trials, graph):
     sim_data = np.zeros((probs.size, trials)) #2d array of zeros
     for i in range(0, probs.size):
-        x = np.random.binomial(n=booked,  # Number of passengers booked per trial
-                                      p=1 - probs[i],  # show probability
-                                      size=trials) # number of trials
+        x = np.random.binomial( n=booked,  # Number of passengers booked per trial
+                                p=1 - probs[i],  # show probability
+                                size=trials)  # number of trials
         sim_data[i] = x
     if graph:
         pa = sim_data.flatten()
@@ -107,9 +106,9 @@ def overbooking_sim(data_points, runs, graph):
 
 
 
-# no_show_rates = gen_no_show_rates(10000, False)
-# plane_attendance = sim_shows(no_show_rates, 218, 1000, True)
+#no_show_rates = gen_no_show_rates(10000, False)
+#plane_attendance = sim_shows(no_show_rates, 218, 1000, True)
 #overflow_flights, total_bumps, bump_rate = calc_bump(plane_attendance, 218)
-# total_comp, empty_seats, opportunity_lost, capacity, profit = calc_profit(plane_attendance, total_bumps)
+#total_comp, empty_seats, opportunity_lost, capacity, profit = calc_profit(plane_attendance, total_bumps)
 
-sim_data = overbooking_sim(20, 10000000, False)
+sim_data = overbooking_sim(20, 10000000, True)
